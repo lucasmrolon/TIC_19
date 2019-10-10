@@ -8,7 +8,23 @@
     <h:body>
         <h:outputLabel value="Este es el ejercicio N° 2"></h:outputLabel>
         <br/>
-        <h:outputLabel value="mensaje de prueba en español"></h:outputLabel>
+        <h:outputLabel value="Nombre" for="paraNombre"></h:outputLabel>
+        
+        <h:inputText id="nombre" value="#{edadBean.nombre}"  required="true" label="Nombre"
+                             requiredMessage="Debe suministrar su nombre."
+                             title="nombre: " />
+        
+        <h:outputLabel value="Apellido" for="paraApellido"></h:outputLabel>
+        
+        <h:inputText id="apellido" value="#{edadBean.apellido}"  required="true" label="Apellido"
+                             requiredMessage="Debe suministrar su apellido."
+                             title="apellido: " />
+        
+        <h:outputLabel value="Fecha de nacimiento" for="paraFechaNac"></h:outputLabel>
+        <h:inputText id="fecha_nac" value="#{edadBean.fecha_nacimiento}"  required="true" label="Fecha de NACIMIENTO"
+                             requiredMessage="Debe suministrar su fecha de nacimiento."
+                             title="fecha de nacimiento: " />
+        
         <br/>
         <h:link outcome="/index">Volver</h:link>
     </h:body>
