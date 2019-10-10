@@ -27,6 +27,15 @@ public class edadBean {
     public edadBean() {
         
     }
+    
+    public String sacarEdad(){
+        
+        Date fecha_nac = this.fecha_nacimiento;
+        Date fecha_act = new Date();
+        
+        
+        return edad;
+    }
 
     public String getNombre() {
         return nombre;
