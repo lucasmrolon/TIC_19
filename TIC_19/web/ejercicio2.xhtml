@@ -34,13 +34,15 @@
                  <br/>
                 <h:outputLabel value="Fecha de nacimiento" for="paraFechaNac"></h:outputLabel>
                 
-                <p>Date: <input value="#{edadBean.fecha_nacimiento}" type="text" id="datepicker"/></p>
+                <p>Date: <input id="datepicker" value="#{edadBean.fecha_nacimiento}" type="text" /></p>
                 
                 
+                
+               <h:commandButton value="Enviar datos" type="submit" action="ejercicio2_1"></h:commandButton>  
             </h:form>
             <br/>
 
-            <h:commandButton value="Enviar datos" type="submit" action="ejercicio2_1.xhtml"></h:commandButton> 
+            
 
 
             <h:link outcome="/index">Volver</h:link>
