@@ -27,7 +27,7 @@ public class HourBean {
         format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Calendar actual= Calendar.getInstance();
         int hora = actual.get(Calendar.HOUR_OF_DAY);
-         if (hora<=12 && hora>8){
+         if (hora<=12 && hora>=8){
             mensaje = "¡Buenos días!";
             bodycolor="#F3F781";
             fontcolor="#FF0000";
