@@ -22,12 +22,15 @@ public class edadBean {
 
     private String nombre;
     private String apellido;
-    private String fecha_nacimiento;
+    private Date fecha_nacimiento;
     private int edad;
     
     /**
      * Creates a new instance of edadBean
      */
+    public String neew(){
+        return "ejercicio2_1";
+    }
     public edadBean() {
        
     }
@@ -70,11 +73,11 @@ public class edadBean {
         this.apellido = apellido;
     }
 
-    public String getFecha_nacimiento() {
+    public Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
