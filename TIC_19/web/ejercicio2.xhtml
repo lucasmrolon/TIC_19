@@ -13,6 +13,13 @@
             dateFormat: "dd-mm-yy"
         });
     });
+    $('#datetimepicker6').datetimepicker({
+    format:'Y-m-d H:i',
+    onSelectDate:function(current_time, $input){
+        var selectedDate = $input.val();
+        alert(selectedDate);
+    }
+});
         </script>
     </h:head>
     <h:body>
@@ -36,9 +43,14 @@
                  <br/>
                 <h:outputLabel value="Fecha de nacimiento" for="paraFechaNac"></h:outputLabel>
                 
+                <h:inputText id="fecha_nac" value="#{edadBean.fecha_nacimiento}"  required="true" label="Fecha nacimiento"
+                                     requiredMessage="Debe suministrar su feccha de nacimiento."
+                                     title="Fecha de nacimiento: " />
+                <!-- 
                 <p>Date: <input id="datepicker" value="#{edadBean.fecha_nacimiento}" type="text" /></p>
                 
-                
+                <h:commandButton value="Cargar fecha" id="boton_carga"></h:commandButton>  
+                -->
                 
                 <h:commandButton value="Enviar datos" type="submit" action="#{edadBean.neew()}"></h:commandButton>  
             </h:form>

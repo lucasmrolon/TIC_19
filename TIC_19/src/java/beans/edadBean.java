@@ -6,29 +6,51 @@
 package beans;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.enterprise.context.Dependent;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Alexis
  */
 @Named(value = "edadBean")
-@RequestScoped
+@Dependent
 public class edadBean {
 
     private String nombre;
     private String apellido;
-    private Date fecha_nacimiento;
-    private int edad;
+    private String fecha_nacimiento;
+    private String edad;
     
     /**
      * Creates a new instance of edadBean
      */
     public String neew(){
+        Date fecha_nac_date;
+        try {
+            fecha_nac_date = new SimpleDateFormat("dd/MM/yyyy").parse(this.fecha_nacimiento);
+            LocalDate localDate = fecha_nac_date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int año_nacimiento  = localDate.getYear();
+            Date fecha_actual = new Date();
+            LocalDate localDate2 = fecha_actual.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int año_actual = localDate2.getYear();
+            int edad_entero = año_actual - año_nacimiento;
+           this.edad = Integer.toString(edad_entero);
+        } catch (ParseException ex) {
+            Logger.getLogger(edadBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         return "ejercicio2_1";
     }
     public edadBean() {
@@ -73,11 +95,11 @@ public class edadBean {
         this.apellido = apellido;
     }
 
-    public Date getFecha_nacimiento() {
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
