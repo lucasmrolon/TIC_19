@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
  */
 @Named(value = "edadBean")
 @Dependent
-public class edadBean {
+public class Z_old_edadBean {
 
     private String nombre;
     private String apellido;
@@ -47,13 +47,13 @@ public class edadBean {
             int edad_entero = año_actual - año_nacimiento;
            this.edad = Integer.toString(edad_entero);
         } catch (ParseException ex) {
-            Logger.getLogger(edadBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Z_old_edadBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
         return "ejercicio2_1";
     }
-    public edadBean() {
+    public Z_old_edadBean() {
        
     }
     /*
